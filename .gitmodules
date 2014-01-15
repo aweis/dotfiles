@@ -10,3 +10,6 @@
 [submodule "vim/bundle/vim-statline"]
 	path = vim/bundle/vim-statline
 	url = https://github.com/millermedeiros/vim-statline
+[submodule "scm_breeze"]
+	path = scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze
