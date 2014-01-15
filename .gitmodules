@@ -7,3 +7,6 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = http://github.com/gmarik/vundle.git
+[submodule "vim/bundle/vim-statline"]
+	path = vim/bundle/vim-statline
+	url = https://github.com/millermedeiros/vim-statline
