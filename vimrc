@@ -1,21 +1,45 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim72/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
-
-" no vi compatibility
+" no vi compatibility (same as ocp)
 set nocompatible
+filetype off " required for vundle
+
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" Bundle!
+" Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-eunuch'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-endwise'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimproc'
+" Bundle 'mileszs/ack'
+Bundle 'msanders/snipmate.vim'
+Bundle 'gerw/vim-latex-suite'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'walm/jshint.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-scripts/vimwiki'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'kchmck/vim-coffee-script'
+" Bundle 'lukerandall/haskellmode-vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'ujihisa/neco-ghc'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 set modelines=0
 
