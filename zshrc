@@ -56,6 +56,7 @@ alias cd='builtin cd'
 
 # alias specific directories
 alias cds='cd $HOME/Dropbox/Apps/acm-schedule'
+alias cdd="cd $DOTFILES_DIR"
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
