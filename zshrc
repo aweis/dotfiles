@@ -1,3 +1,5 @@
+DOTFILES_DIR=$HOME/Dropbox/dotfiles
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:"/usr/local/mysql/bin"
 
