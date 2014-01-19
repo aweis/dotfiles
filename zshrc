@@ -1,6 +1,8 @@
 DOTFILES_DIR=$HOME/Dropbox/dotfiles
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$PATH:"/usr/local/mysql/bin"
 
 # Coreutils from homebrew
