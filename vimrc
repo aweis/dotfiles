@@ -29,6 +29,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-ragtag'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'tpope/vim-commentary'
@@ -220,6 +221,9 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey   ctermbg=darkgrey
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=grey
+
+"tpope ragtag vim
+let g:ragtag_global_maps = 1
 
 "tagbar config
 nmap <leader>t :TagbarToggle<CR>
