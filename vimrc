@@ -40,6 +40,7 @@ Bundle 'ujihisa/neco-ghc'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'xmledit'
 
 set modelines=0
 
