@@ -37,6 +37,7 @@ Bundle 'kchmck/vim-coffee-script'
 " Bundle 'lukerandall/haskellmode-vim'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'ujihisa/neco-ghc'
+Bundle "mattn/emmet-vim"
 
 " vim-scripts repos
 Bundle 'L9'
