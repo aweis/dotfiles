@@ -13,3 +13,4 @@
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze
+  ignore = dirty
