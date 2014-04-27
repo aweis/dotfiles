@@ -26,6 +26,7 @@ PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
 
 # binds
 bindkey "^R" history-incremental-search-backward
+bindkey -e
 
 # alias
 alias v='vim'
@@ -67,6 +68,8 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serve
 alias r="rails"
 alias tmux="TERM=screen-256color-bce tmux"
 alias tma='tmux attach -d -t'
+alias sshj='ssh aweis@10.3.0.164'
+alias sshvm='ssh aweis@10.3.12.208'
 
 #exports
 export PATH="$(brew --prefix coreutils)/libexec/gnubin":$PATH:/opt/android-sdk/platform-tools/adb:/opt/android-ndk-crystax:/home/.gem/ruby/1.9.1/bin
