@@ -19,7 +19,7 @@ source ~/.zsh/zsh-git-prompt/zshrc.sh
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 source "${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 eval `lesspipe.sh`
-. resty
+#. resty
 
 # update prompt
 PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
