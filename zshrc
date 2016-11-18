@@ -6,7 +6,9 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 PATH=$PATH:"/usr/local/mysql/bin"
 
 # Coreutils from homebrew
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+#PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+BREW_CORE_UTILS="/usr/local/opt/coreutils"
+PATH="$BREW_CORE_UTILS/libexec/gnubin:$PATH"
 
 # #basic stuff
 autoload -U compinit promptinit add-zsh-hook
@@ -76,7 +78,7 @@ alias sshj='ssh aweis@10.3.0.164'
 alias sshvm='ssh aweis@10.3.12.208'
 
 #exports
-export PATH="$(brew --prefix coreutils)/libexec/gnubin":$PATH:/opt/android-sdk/platform-tools/adb:/opt/android-ndk-crystax:/home/.gem/ruby/1.9.1/bin
+export PATH="$BREW_CORE_UTILS/libexec/gnubin":$PATH:/opt/android-sdk/platform-tools/adb:/opt/android-ndk-crystax:/home/.gem/ruby/1.9.1/bin
 export EDITOR=vim
 export ECLIPSE_HOME=/usr/share/eclipse
 export HISTSIZE=10000
