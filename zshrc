@@ -60,6 +60,10 @@ alias cd='builtin cd'
 # alias specific directories
 alias cds='cd $HOME/Dropbox/Apps/acm-schedule'
 alias cdd="cd $DOTFILES_DIR"
+alias cdf='cd $HOME/Dropbox/Apps/slack'
+alias cdw='cd $HOME/Dropbox/Apps/weischat'
+alias cdt='cd $HOME/Dropbox/Apps/thedormlounge'
+alias cdc='cd $HOME/Dropbox/Apps/chat'
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -120,3 +124,11 @@ export LS_COLORS
 #cd to the most recent place
 touch /tmp/.cwd
 cd `cat /tmp/.cwd`
+
+#SLOW!!!!
+#export NVM_DIR="/Users/adam/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#https://github.com/robbyrussell/oh-my-zsh/issues/5327#issuecomment-248836398
+alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
+
+export ANDROID_HOME=~/Library/Android/sdk

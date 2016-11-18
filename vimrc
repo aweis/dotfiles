@@ -2,47 +2,55 @@
 set nocompatible
 filetype off " required for vundle
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#rc()
-Bundle 'gmarik/vundle'
-" Bundle!
-" Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-eunuch'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-endwise'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimproc'
-" Bundle 'mileszs/ack'
-Bundle 'msanders/snipmate.vim'
-Bundle 'gerw/vim-latex-suite'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'walm/jshint.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-ragtag'
-Bundle 'vim-scripts/vimwiki'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'kchmck/vim-coffee-script'
-" Bundle 'lukerandall/haskellmode-vim'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'ujihisa/neco-ghc'
-Bundle "mattn/emmet-vim"
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'gmarik/vundle'
+" Plugin!
+" Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-eunuch'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-endwise'
+Plugin 'Shougo/neocomplcache'
+Plugin 'Shougo/vimproc'
+" Plugin 'mileszs/ack'
+Plugin 'msanders/snipmate.vim'
+Plugin 'gerw/vim-latex-suite'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'walm/jshint.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tsaleh/vim-matchit'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-ragtag'
+Plugin 'vim-scripts/vimwiki'
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'kchmck/vim-coffee-script'
+" Plugin 'lukerandall/haskellmode-vim'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'ujihisa/neco-ghc'
+Plugin 'mattn/emmet-vim'
+
+Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+Plugin 'jelera/vim-javascript-syntax'
 
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'xmledit'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'xmledit'
 
 set modelines=0
 
@@ -75,7 +83,7 @@ set wildmode=list:longest
 set ttyfast
 set cursorline
 set laststatus=2
-set relativenumber
+" set relativenumber
 set undofile
 set nopaste
 
@@ -83,7 +91,7 @@ set nopaste
 set showcmd
 
 " yank to paste buffer
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " show line and column position of cursor
 set ruler
@@ -93,6 +101,20 @@ set statusline=\ \%f%m%r%h%w\ ::\ %y\ [%{&ff}]\%=\ [%p%%:\ %c,%l/%L]\
 "set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
 set cmdheight=1
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_check_on_open = 1
+
+ "set statusline+=%#warningmsg#
+ "set statusline+=%{SyntasticStatuslineFlag()}
+ "set statusline+=%*
+ 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_elixir_checkers = ['elixir']
+" let g:syntastic_enable_elixir_checker = 1
 
 " textwidth
 "set textwidth=80
@@ -117,8 +139,12 @@ syntax on
 set mouse=a
 
 " set colorscheme
-"colorscheme solarized
-colorscheme dawn
+" colorscheme solarized
+" colorscheme dawn
+" colorscheme vylight
+set background=dark
+colorscheme solarized
+
 
 "allows sudo with :w!!
 cmap w!! %!sudo tee > /dev/null %
