@@ -134,3 +134,5 @@ cd `cat /tmp/.cwd`
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 
 export ANDROID_HOME=~/Library/Android/sdk
+
+[ -s "/Users/aweis/.scm_breeze/scm_breeze.sh" ] && source "/Users/aweis/.scm_breeze/scm_breeze.sh"
