@@ -42,6 +42,8 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'elixir-lang/vim-elixir'
 
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
