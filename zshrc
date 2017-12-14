@@ -19,7 +19,7 @@ prompt walters
 # sources
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-source "${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+#source "${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 #eval `lesspipe.sh`
 #. resty
 
