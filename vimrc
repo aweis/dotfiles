@@ -13,7 +13,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-eunuch'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
@@ -51,6 +50,24 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'xmledit'
+
+Plugin 'w0rp/ale'
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+let g:ale_linters = {
+\ 'javascript': ['flow']
+\ }
+highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = 'X' " could use emoji
+let g:ale_sign_warning = '?' " could use emoji
+let g:ale_statusline_format = ['X %d', '? %d', '']
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '%linter% says %s'
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 set modelines=0
 
@@ -102,19 +119,6 @@ set statusline=\ \%f%m%r%h%w\ ::\ %y\ [%{&ff}]\%=\ [%p%%:\ %c,%l/%L]\
 set laststatus=2
 set cmdheight=1
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_check_on_open = 1
-
- "set statusline+=%#warningmsg#
- "set statusline+=%{SyntasticStatuslineFlag()}
- "set statusline+=%*
- 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_elixir_checkers = ['elixir']
-" let g:syntastic_enable_elixir_checker = 1
 
 " textwidth
 "set textwidth=80
