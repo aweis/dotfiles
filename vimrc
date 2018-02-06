@@ -41,8 +41,10 @@ Plugin 'ujihisa/neco-ghc'
 Plugin 'mattn/emmet-vim'
 
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'hhvm/vim-hack'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
