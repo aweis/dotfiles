@@ -1,57 +1,56 @@
 " no vi compatibility (same as ocp)
 set nocompatible
-filetype off " required for vundle
 
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
+" Plug!
+" Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-endwise'
+Plug 'Shougo/neocomplcache'
+Plug 'Shougo/vimproc'
+" Plug 'mileszs/ack'
+Plug 'msanders/snipmate.vim'
+Plug 'gerw/vim-latex-suite'
+Plug 'vim-scripts/taglist.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'walm/jshint.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tsaleh/vim-matchit'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-ragtag'
+Plug 'vim-scripts/vimwiki'
+Plug 'vim-scripts/closetag.vim'
+Plug 'tpope/vim-commentary'
+Plug 'kchmck/vim-coffee-script'
+" Plug 'lukerandall/haskellmode-vim'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'ujihisa/neco-ghc'
+Plug 'mattn/emmet-vim'
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'gmarik/vundle'
-" Plugin!
-" Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-endwise'
-Plugin 'Shougo/neocomplcache'
-Plugin 'Shougo/vimproc'
-" Plugin 'mileszs/ack'
-Plugin 'msanders/snipmate.vim'
-Plugin 'gerw/vim-latex-suite'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'walm/jshint.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tsaleh/vim-matchit'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-ragtag'
-Plugin 'vim-scripts/vimwiki'
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'kchmck/vim-coffee-script'
-" Plugin 'lukerandall/haskellmode-vim'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'ujihisa/neco-ghc'
-Plugin 'mattn/emmet-vim'
+Plug 'elixir-lang/vim-elixir'
 
-Plugin 'elixir-lang/vim-elixir'
-
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
-Plugin 'jelera/vim-javascript-syntax'
+Plug 'jelera/vim-javascript-syntax'
 
 " vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'xmledit'
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
+Plug 'vim-scripts/xmledit'
 
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
+
+call plug#end()
+
+let g:javascript_plugin_flow = 1
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
