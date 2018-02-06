@@ -70,7 +70,7 @@ nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 set modelines=0
 
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " directory
