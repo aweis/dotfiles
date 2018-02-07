@@ -1,6 +1,18 @@
 " no vi compatibility (same as ocp)
 set nocompatible
 
+if $ADMIN_SCRIPTS == ""
+  let $ADMIN_SCRIPTS = "/mnt/vol/engshare/admin/scripts"
+endif
+
+if $LOCAL_ADMIN_SCRIPTS == ""
+  let $LOCAL_ADMIN_SCRIPTS = "/usr/facebook/ops/rc/"
+endif
+
+if filereadable("$ADMIN_SCRIPTS/master.vimrc")
+  source $ADMIN_SCRIPTS/master.vimrc
+endif
+
 call plug#begin('~/.vim/plugged')
 " Plug!
 " Plug 'mattn/emmet-vim'
