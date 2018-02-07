@@ -10,6 +10,7 @@ PATH=$PATH:"/usr/local/mysql/bin"
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 BREW_CORE_UTILS="/usr/local/opt/coreutils"
 PATH="$BREW_CORE_UTILS/libexec/gnubin:$PATH"
+PATH="$HOME/bin":$PATH
 
 # #basic stuff
 autoload -U compinit promptinit add-zsh-hook
