@@ -47,6 +47,7 @@ Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/xmledit'
 
 Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
