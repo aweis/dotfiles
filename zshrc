@@ -156,7 +156,6 @@ function hgproml {
 }
 
 if [[ -n $FB ]]; then
-  echo "running on fb"
   if [ -f /usr/share/scm/scm-prompt.sh ]; then
     source /usr/share/scm/scm-prompt.sh
   fi
