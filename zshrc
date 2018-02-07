@@ -75,7 +75,7 @@ alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.l
 alias pgstart='pgs'
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias r="rails"
-alias tmux="TERM=screen-256color-bce tmux"
+#alias tmux="TERM=screen-256color-bce tmux"
 alias tma='tmux attach -d -t'
 alias sshj='ssh aweis@10.3.0.164'
 alias sshvm='ssh aweis@10.3.12.208'
