@@ -1,4 +1,5 @@
 DOTFILES_DIR=$HOME/Dropbox/dotfiles
+[[ `hostname` =~ 'facebook.com' ]] && FB="true"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -22,9 +23,6 @@ source ~/.zsh/zsh-git-prompt/zshrc.sh
 source "${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 #eval `lesspipe.sh`
 #. resty
-
-# update prompt
-PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
 
 # binds
 bindkey "^R" history-incremental-search-backward
@@ -137,3 +135,41 @@ cd `cat /tmp/.cwd`
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 
 export ANDROID_HOME=~/Library/Android/sdk
+
+# facebook stuff to show a different statusline if in an hg repo on the dev server
+
+function parse_hg_branch {
+  if [[ -n $(_dotfiles_scm_info) ]]; then
+    # wrap in parens
+    echo "$(_dotfiles_scm_info)" | tr -d ' '
+  fi
+}
+
+autoload -U colors && colors
+function hgproml {
+  local user="%n"
+  local at="@"
+  local host="%m"
+
+  PS1="$user$at$host%{$fg[magenta]%}\$(parse_hg_branch)%{$reset_color%}> "
+  PROMPT=''"$PS1"''
+}
+
+if [[ -n $FB ]]; then
+  echo "running on fb"
+  if [ -f /usr/share/scm/scm-prompt.sh ]; then
+    source /usr/share/scm/scm-prompt.sh
+  fi
+fi
+
+set_prompt () {
+  if [[ -n $FB && ( "$PWD" =~ "/home/aweis/www" || "$PWD" =~ "/home/aweis/fbsource" ) ]]; then
+    hgproml
+  else
+    # update prompt
+    PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
+  fi
+}
+
+precmd_functions+=set_prompt
+set_prompt
