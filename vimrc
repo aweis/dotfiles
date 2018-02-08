@@ -9,7 +9,7 @@ if $LOCAL_ADMIN_SCRIPTS == ""
   let $LOCAL_ADMIN_SCRIPTS = "/usr/facebook/ops/rc/"
 endif
 
-if filereadable("$ADMIN_SCRIPTS/master.vimrc")
+if !empty(glob("$ADMIN_SCRIPTS/master.vimrc"))
   source $ADMIN_SCRIPTS/master.vimrc
 endif
 
