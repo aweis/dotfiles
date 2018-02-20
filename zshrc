@@ -156,6 +156,10 @@ function hgproml {
   PROMPT=''"$PS1"''
 }
 
+if [ -f /usr/facebook/ops/rc/master.zshrc ]; then
+  source /usr/facebook/ops/rc/master.zshrc
+fi
+
 if [[ -n $FB ]]; then
   if [ -f /usr/share/scm/scm-prompt.sh ]; then
     source /usr/share/scm/scm-prompt.sh
