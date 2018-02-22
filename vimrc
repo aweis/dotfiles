@@ -67,13 +67,22 @@ let g:javascript_plugin_flow = 1
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\ 'javascript': ['flow']
+\ 'javascript': ['flow', 'eslint']
 \ }
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+"let g:ale_javascript_eslint_use_global = 1
+let g:ale_fix_on_save = 1
 highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
 let g:ale_sign_error = 'X' " could use emoji
 let g:ale_sign_warning = '?' " could use emoji
-let g:ale_statusline_format = ['X %d', '? %d', '']
+" Add lint status to statusline
+let &statusline .= "\ue0b3 %{ALEGetStatusLine()} "
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', 'OK']
+" Configs for flow and hh
+let g:ale_javascript_flow_use_global = 1
+let g:ale_lint_on_save = 1
 " %linter% is the name of the linter that provided the message
 " %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
