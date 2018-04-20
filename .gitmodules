@@ -4,6 +4,7 @@
 [submodule "zsh/zsh-git-prompt"]
 	path = zsh/zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
+  ignore = all
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = http://github.com/gmarik/vundle.git
@@ -13,7 +14,8 @@
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze
-  ignore = dirty
+  ignore = all
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+  ignore = all
