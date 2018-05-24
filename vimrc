@@ -63,7 +63,7 @@ Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
-let g:javascript_plugin_flow = 1
+let g:javascript_plugin_flow = 0
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
@@ -81,8 +81,8 @@ let g:ale_sign_warning = '?' " could use emoji
 let &statusline .= "\ue0b3 %{ALEGetStatusLine()} "
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', 'OK']
 " Configs for flow and hh
-let g:ale_javascript_flow_use_global = 1
-let g:ale_lint_on_save = 1
+let g:ale_javascript_flow_use_global = 0
+let g:ale_lint_on_save = 0
 " %linter% is the name of the linter that provided the message
 " %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
