@@ -137,6 +137,11 @@ cd `cat /tmp/.cwd`
 #https://github.com/robbyrussell/oh-my-zsh/issues/5327#issuecomment-248836398
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 
+if [[ -n $FB ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+fi
+
 export ANDROID_HOME=~/Library/Android/sdk
 
 # facebook stuff to show a different statusline if in an hg repo on the dev server
