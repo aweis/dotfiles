@@ -65,7 +65,9 @@ alias cdd="cd $DOTFILES_DIR"
 alias cdf='cd $HOME/Dropbox/Apps/slack'
 alias cdw='cd $HOME/Dropbox/Apps/weischat'
 alias cdt='cd $HOME/Dropbox/Apps/thedormlounge'
-alias cdc='cd $HOME/Dropbox/Apps/chat'
+alias cdn='cd $HOME/www/html/intern/js/network'
+alias cdp='cd $HOME/www/flib/intern/site/x/network'
+alias cdc='cd $HOME/www/html/intern/css/network'
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
