@@ -47,6 +47,7 @@ Plug 'ujihisa/neco-ghc'
 Plug 'mattn/emmet-vim'
 
 Plug 'elixir-lang/vim-elixir'
+Plug 'dart-lang/dart-vim-plugin'
 
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
