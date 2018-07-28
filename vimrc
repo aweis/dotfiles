@@ -33,7 +33,7 @@ Plug 'vim-scripts/taglist.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'walm/jshint.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'tsaleh/vim-matchit'
+"Plug 'tsaleh/vim-matchit'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-ragtag'
@@ -182,7 +182,7 @@ filetype plugin indent on
 let mapleader=","
 
 " source matchit.vim so that % can search through if/else/etc
-runtime plugins/matchit.vim
+"runtime plugins/matchit.vim
 
 " maintain more context around cursor
 set scrolloff=3
