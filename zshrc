@@ -6,6 +6,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$PATH:"/usr/local/mysql/bin"
 PATH=$PATH:"$HOME/development/flutter/bin"
+PATH="$PATH":"$HOME/.pub-cache/bin"
+
 
 # Coreutils from homebrew
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
