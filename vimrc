@@ -47,7 +47,8 @@ Plug 'eagletmt/ghcmod-vim'
 Plug 'ujihisa/neco-ghc'
 Plug 'mattn/emmet-vim'
 
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
+
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 
@@ -96,6 +97,7 @@ let g:ale_linters = {
 \ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
 \ 'reason': ['merlin', 'ols'],
+\ 'elixir': ['mix'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['prettier', 'eslint'],
@@ -103,6 +105,7 @@ let g:ale_fixers = {
 \ 'hack': ['hackfmt'],
 \ 'ruby': ['rufo'],
 \ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
+\ 'elixir': ['mix_format'],
 \ }
 "highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 "highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
