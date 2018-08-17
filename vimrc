@@ -48,6 +48,7 @@ Plug 'mattn/emmet-vim'
 
 Plug 'elixir-lang/vim-elixir'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
 
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
@@ -63,33 +64,52 @@ Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
-
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+"let g:lsc_auto_map = v:true " Use defaults
+let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<C-]>',
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': '<C-n>',
+    \ 'PreviousReference': '<C-p>',
+    \ 'FindImplementations': 'gI',
+    \ 'FindCodeActions': 'ga',
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'ShowHover': 'K',
+    \ 'Completion': 'completefunc',
+    \}
+let g:lsc_preview_split_direction = 'below'
 let g:javascript_plugin_flow = 0
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\ 'javascript': ['flow', 'eslint']
+\ 'javascript': ['flow', 'eslint'],
+\ 'dart': ['dartanalyzer', 'language_server'],
+\ 'ruby': ['ruby'],
 \ }
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-"let g:ale_javascript_eslint_use_global = 1
-let g:ale_fix_on_save = 1
-highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
-highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
-let g:ale_sign_error = 'X' " could use emoji
+let g:ale_fixers = {
+\ 'javascript': ['prettier', 'eslint'],
+\ 'dart': ['dartfmt'],
+\ 'ruby': ['rufo'],
+\ }
+"highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+"highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = '>>' " could use emoji
 let g:ale_sign_warning = '?' " could use emoji
 " Add lint status to statusline
 let &statusline .= "\ue0b3 %{ALEGetStatusLine()} "
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', 'OK']
 " Configs for flow and hh
 let g:ale_javascript_flow_use_global = 0
-let g:ale_lint_on_save = 0
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
 " %linter% is the name of the linter that provided the message
 " %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
+let g:ale_completion_enabled = 1
 
 set modelines=0
 
