@@ -189,4 +189,4 @@ precmd_functions+=set_prompt
 set_prompt
 
 # OPAM configuration
-. /Users/adam/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. /Users/${USER}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

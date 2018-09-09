@@ -89,11 +89,13 @@ let g:ale_linters = {
 \ 'javascript': ['flow', 'eslint'],
 \ 'dart': ['dartanalyzer', 'language_server'],
 \ 'ruby': ['ruby'],
+\ 'reason': ['merlin', 'ols'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['prettier', 'eslint'],
 \ 'dart': ['dartfmt'],
 \ 'ruby': ['rufo'],
+\ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
 \ }
 "highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 "highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
