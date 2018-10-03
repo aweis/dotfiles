@@ -14,6 +14,8 @@ PATH="$PATH":"$HOME/.pub-cache/bin"
 BREW_CORE_UTILS="/usr/local/opt/coreutils"
 PATH="$BREW_CORE_UTILS/libexec/gnubin:$PATH"
 PATH="$HOME/bin":$PATH
+PATH="${HOME}/.config/yarn/global/node_modules/.bin${PATH:+:${PATH}}"; export PATH;
+
 
 # #basic stuff
 autoload -U compinit promptinit add-zsh-hook
@@ -177,7 +179,7 @@ if [[ -n $FB ]]; then
 fi
 
 set_prompt () {
-  if [[ -n $FB && ( "$PWD" =~ "/home/aweis/www" || "$PWD" =~ "/home/aweis/fbsource" ) ]]; then
+  if [[ -n $FB && ( "$PWD" =~ "/home/aweis/www" || "$PWD" =~ "/home/aweis/www-hg" ||"$PWD" =~ "/home/aweis/dataswarm" || "$PWD" =~ "/home/aweis/fbsource" ) ]]; then
     hgproml
   else
     # update prompt
