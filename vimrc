@@ -137,12 +137,9 @@ endif
 
 set modelines=0
 
-call pathogen#infect()
-call pathogen#helptags()
-
 " FB Stuff
-let g:hack#enable = 0 " disable typecheck on save
-let g:hack#omnifunc=1 " autocompletion using omnifunc
+"let g:hack#enable = 0 " disable typecheck on save
+"let g:hack#omnifunc=1 " autocompletion using omnifunc
 "autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
 " directory
