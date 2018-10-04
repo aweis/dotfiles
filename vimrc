@@ -55,6 +55,10 @@ let g:jsx_ext_required = 0
 
 Plug 'jelera/vim-javascript-syntax'
 
+" hack stuff
+Plug 'hhvm/vim-hack'
+Plug 'mxw/vim-xhp'
+
 " vim-scripts repos
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
@@ -88,12 +92,14 @@ let g:javascript_plugin_flow = 0
 let g:ale_linters = {
 \ 'javascript': ['flow', 'eslint'],
 \ 'dart': ['dartanalyzer', 'language_server'],
+\ 'hack': ['hack', 'hhast'],
 \ 'ruby': ['ruby'],
 \ 'reason': ['merlin', 'ols'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['prettier', 'eslint'],
 \ 'dart': ['dartfmt'],
+\ 'hack': ['hackfmt'],
 \ 'ruby': ['rufo'],
 \ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
 \ }
@@ -124,7 +130,7 @@ call pathogen#helptags()
 " FB Stuff
 let g:hack#enable = 0 " disable typecheck on save
 let g:hack#omnifunc=1 " autocompletion using omnifunc
-autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
+"autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
 " directory
 set directory=/Users/adam/Dropbox/dotfiles/.vim
