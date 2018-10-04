@@ -93,7 +93,7 @@ let g:javascript_plugin_flow = 0
 let g:ale_linters = {
 \ 'javascript': ['flow', 'eslint'],
 \ 'dart': ['dartanalyzer', 'language_server'],
-\ 'hack': ['hack', 'hhast'],
+\ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
 \ 'reason': ['merlin', 'ols'],
 \ }
