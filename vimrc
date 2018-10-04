@@ -120,7 +120,20 @@ let g:ale_echo_msg_format = '%linter% says %s'
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
+" Press K to view the type in the gutter
+nnoremap <silent> K :ALEHover<CR>
+" Press gd to go to the definition
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
+
 let g:ale_completion_enabled = 1
+" show type on hover in a floating bubble
+if v:version >= 801
+  set balloonevalterm
+  set ballooneval
+  let g:ale_set_balloons = 1
+  set balloondelay=250
+endif
 
 set modelines=0
 
@@ -204,6 +217,7 @@ set mouse=a
 " colorscheme solarized
 " colorscheme dawn
 " colorscheme vylight
+set t_Co=256
 set background=dark
 colorscheme solarized
 
