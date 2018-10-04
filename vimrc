@@ -1,3 +1,4 @@
+
 " no vi compatibility (same as ocp)
 set nocompatible
 
@@ -209,6 +210,8 @@ syntax on
 
 " enable mouse
 set mouse=a
+" necessary for vim-bubbles
+set ttymouse=sgr
 
 " set colorscheme
 " colorscheme solarized
