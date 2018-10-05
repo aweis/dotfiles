@@ -3,15 +3,15 @@
 set nocompatible
 
 if $ADMIN_SCRIPTS == ""
-  let $ADMIN_SCRIPTS = "/mnt/vol/engshare/admin/scripts"
+  "let $ADMIN_SCRIPTS = "/mnt/vol/engshare/admin/scripts"
 endif
 
 if $LOCAL_ADMIN_SCRIPTS == ""
-  let $LOCAL_ADMIN_SCRIPTS = "/usr/facebook/ops/rc/"
+  "let $LOCAL_ADMIN_SCRIPTS = "/usr/facebook/ops/rc/"
 endif
 
 if !empty(glob("$ADMIN_SCRIPTS/master.vimrc"))
-  source $ADMIN_SCRIPTS/master.vimrc
+  "source $ADMIN_SCRIPTS/master.vimrc
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -128,6 +128,7 @@ nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
 let g:ale_completion_enabled = 1
+set completeopt=menu,menuone,preview,noselect,noinsert
 " show type on hover in a floating bubble
 if v:version >= 801
   set balloonevalterm
