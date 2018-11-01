@@ -67,12 +67,21 @@ Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/xmledit'
 
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 "Reason
 Plug 'reasonml-editor/vim-reason-plus'
 
 call plug#end()
+
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 "let g:lsc_auto_map = v:true " Use defaults
 let g:lsc_auto_map = {
