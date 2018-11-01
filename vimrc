@@ -108,10 +108,11 @@ let g:ale_linters = {
 \ 'reason': ['merlin', 'ols'],
 \ 'elixir': ['mix'],
 \ }
+
 let g:ale_fixers = {
 \ 'javascript': ['prettier', 'eslint'],
 \ 'dart': ['dartfmt'],
-\ 'hack': ['hackfmt'],
+\ 'hack': ['trim_whitespace', 'hackfmtdiff', 'remove_trailing_lines'],
 \ 'ruby': ['rufo'],
 \ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
 \ 'elixir': ['mix_format'],
