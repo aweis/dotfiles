@@ -39,7 +39,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-ragtag'
 Plug 'vim-scripts/vimwiki'
-Plug 'vim-scripts/closetag.vim'
+Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'lukerandall/haskellmode-vim'
@@ -342,6 +342,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=grey
 
 "tpope ragtag vim
 let g:ragtag_global_maps = 1
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.xml'
 
 "tagbar config
 nmap <leader>t :TagbarToggle<CR>
