@@ -40,6 +40,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-ragtag'
 Plug 'vim-scripts/vimwiki'
 Plug 'alvan/vim-closetag'
+Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-commentary'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'lukerandall/haskellmode-vim'
@@ -344,6 +345,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=grey
 let g:ragtag_global_maps = 1
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.xml'
+
+" MatchTagAlways plugin
+let g:mta_filetypes = {
+      \ 'html' : 1,
+      \ 'xhtml' : 1,
+      \ 'xml' : 1,
+      \ 'jinja' : 1,
+      \ 'javascript.jsx' : 1,
+\}
 
 "tagbar config
 nmap <leader>t :TagbarToggle<CR>
