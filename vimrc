@@ -143,6 +143,12 @@ nnoremap <silent> K :ALEHover<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
+" sort lines inside {} (useful for CSS and basic JS objects)
+noremap <silent> <leader>sc vi{:'<, '>sort i<CR>
+
+" sort lines inside paragraph (useful for import/require blocks)
+noremap <silent> <leader>sp vip:'<, '>sort /.\{-}\(require\\|from\)/ i<CR>
+
 let g:ale_completion_enabled = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
 " show type on hover in a floating bubble
