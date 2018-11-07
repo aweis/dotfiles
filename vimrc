@@ -104,7 +104,7 @@ let g:javascript_plugin_flow = 0
 " Asynchronous Lint Engine (ALE)
 " Limit linters used for JavaScript.
 let g:ale_linters = {
-\ 'javascript': ['flow', 'eslint'],
+\ 'javascript': ['flow', 'flow-language-server', 'eslint'],
 \ 'dart': ['dartanalyzer', 'language_server'],
 \ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
