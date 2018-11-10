@@ -60,7 +60,10 @@ alias wlog='git log --oneline --decorate'
 alias grb-first='git_squash_second_with_initial'
 # git-grep
 alias ggp='git grep'
+
+#mercurial shit
 alias hd='hg diff'
+alias hs='hg status'
 
 # alias cd back to BSD so I can cd into directories with numbers
 alias cd='builtin cd'
