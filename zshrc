@@ -12,7 +12,8 @@ PATH="$PATH":"$HOME/.pub-cache/bin"
 # Coreutils from homebrew
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 BREW_CORE_UTILS="/usr/local/opt/coreutils"
-PATH="$BREW_CORE_UTILS/libexec/gnubin:$PATH"
+LLVM_BIN="/usr/local/opt/llvm/bin"
+PATH="${LLVM_BIN}:$BREW_CORE_UTILS/libexec/gnubin:$PATH"
 PATH="$HOME/bin":$PATH
 PATH="${HOME}/.config/yarn/global/node_modules/.bin${PATH:+:${PATH}}"; export PATH;
 

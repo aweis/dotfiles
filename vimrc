@@ -110,6 +110,7 @@ let g:ale_linters = {
 \ 'ruby': ['ruby'],
 \ 'reason': ['merlin', 'ols'],
 \ 'elixir': ['mix'],
+\ 'cpp': ['clangd', 'clang', 'clangcheck'],
 \ }
 
 let g:ale_fixers = {
@@ -119,7 +120,9 @@ let g:ale_fixers = {
 \ 'ruby': ['rufo'],
 \ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
 \ 'elixir': ['mix_format'],
+\ 'cpp': ['clang-format'],
 \ }
+let g:ale_c_parse_compile_commands=1
 "highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 "highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
 let g:ale_sign_error = '>>' " could use emoji
@@ -150,6 +153,7 @@ noremap <silent> <leader>sc vi{:'<, '>sort i<CR>
 noremap <silent> <leader>sp vip:'<, '>sort /.\{-}\(require\\|from\)/ i<CR>
 
 let g:ale_completion_enabled = 1
+let g:ale_c_parse_makefile = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
 " show type on hover in a floating bubble
 if v:version >= 801
