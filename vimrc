@@ -146,12 +146,6 @@ nnoremap <silent> K :ALEHover<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
-" sort lines inside {} (useful for CSS and basic JS objects)
-noremap <silent> <leader>sc vi{:'<, '>sort i<CR>
-
-" sort lines inside paragraph (useful for import/require blocks)
-noremap <silent> <leader>sp vip:'<, '>sort /.\{-}\(require\\|from\)/ i<CR>
-
 let g:ale_completion_enabled = 1
 let g:ale_c_parse_makefile = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
@@ -392,6 +386,12 @@ let g:EclimProjectTreeExpandPathOnOpen=1
 let g:EclimProjectTreeSharedInstance=1  "share tree instance through all tabs
 " use tabnew instead of split for new action
 let g:EclimProjectTreeActions = [ {'pattern': '.*', 'name': 'Tab', 'action': 'tabnew'} ]
+
+" sort lines inside {} (useful for CSS and basic JS objects)
+noremap <silent> <leader>sc vi{:'<, '>sort i<CR>
+
+" sort lines inside paragraph (useful for import/require blocks)
+noremap <silent> <leader>sj vip:'<, '>sort /.\{-}\(require\\|from\)/ i<CR>
 
 "LaTeX
 "Compile to pdf
