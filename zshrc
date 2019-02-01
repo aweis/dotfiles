@@ -70,13 +70,14 @@ alias cd='builtin cd'
 
 # alias specific directories
 alias cds='cd $HOME/Dropbox/Apps/acm-schedule'
-alias cdd="cd $DOTFILES_DIR"
+alias cdd='cd $HOME/www/html/intern/js/network/network_ui/dashboard'
 alias cdf='cd $HOME/Dropbox/Apps/slack'
 alias cdw='cd $HOME/Dropbox/Apps/weischat'
 alias cdt='cd $HOME/Dropbox/Apps/thedormlounge'
-alias cdn='cd $HOME/www/html/intern/js/network'
-alias cdp='cd $HOME/www/flib/intern/site/x/network'
-alias cdc='cd $HOME/www/html/intern/css/network'
+alias cdn='cd $HOME/www/html/intern/js/network/network_ui'
+alias cdp='cd $HOME/www/flib/intern/site/x/network/network_ui'
+alias cdc='cd $HOME/www/html/intern/css/network/'
+alias cdh='cd $HOME/www/html/intern/js/network/network_ui/re/hecate'
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -89,6 +90,7 @@ fi
 alias tma='tmux attach -d -t'
 alias sshj='ssh aweis@10.3.0.164'
 alias sshvm='ssh aweis@10.3.12.208'
+alias re="~/www/scripts/re/build-www"
 
 #exports
 export PATH="$BREW_CORE_UTILS/libexec/gnubin":$PATH:/opt/android-sdk/platform-tools/adb:/opt/android-ndk-crystax:/home/.gem/ruby/1.9.1/bin
