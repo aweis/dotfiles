@@ -198,3 +198,5 @@ set_prompt
 
 # OPAM configuration
 . /Users/${USER}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

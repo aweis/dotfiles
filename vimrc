@@ -78,6 +78,13 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 "Reason
 Plug 'reasonml-editor/vim-reason-plus'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+nnoremap <c-p> :FZF<cr>
+nnoremap <c-t> :FZF<cr>
+
+
 call plug#end()
 
 " Start autocompletion after 4 chars
@@ -333,6 +340,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+
+" We have a big repository, sadly enough
+let g:CommandTMaxFiles=50000
+" Make delete work as backspace
+let g:CommandTBackspaceMap='<Del>'
 
 
 " Tex-Live grep fix
