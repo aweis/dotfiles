@@ -60,6 +60,9 @@ let g:jsx_ext_required = 0
 
 Plug 'jelera/vim-javascript-syntax'
 
+" Graphql syntax highlighting
+Plug 'jparise/vim-graphql'
+
 " hack stuff
 Plug 'hhvm/vim-hack'
 Plug 'mxw/vim-xhp'
