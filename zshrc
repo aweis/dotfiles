@@ -90,6 +90,7 @@ alias tma='tmux attach -d -t'
 alias sshj='ssh aweis@10.3.0.164'
 alias sshvm='ssh aweis@10.3.12.208'
 alias re="~/www/scripts/re/build-www"
+alias tbgs="tbgs --color on"
 
 #exports
 export PATH="$BREW_CORE_UTILS/libexec/gnubin":$PATH:/opt/android-sdk/platform-tools/adb:/opt/android-ndk-crystax:/home/.gem/ruby/1.9.1/bin
