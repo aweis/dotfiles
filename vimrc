@@ -72,28 +72,11 @@ Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/xmledit'
 
-Plug 'aweis/ale' "Plug 'w0rp/ale'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 "Reason
-Plug 'vim-syntastic/syntastic'
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ocaml', 'reason'],'passive_filetypes': [] }
-
-Plug 'jordwalke/vim-reasonml'
-"" If using vim-plug, install mucomplete:
-Plug 'lifepillar/vim-mucomplete'
-" Configure Autocomplete-as-you-type:
-let g:mucomplete#can_complete = {
-  \ 'default': {
-  \    'omni': { t -> strlen(&l:omnifunc) > 0 && t =~# '\%(\k\|\.\)$' }
-  \    }
-  \  }
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#chains = {'vim': ['path', 'cmd', 'ulti', 'keyn'], 'default': ['path', 'omni']}
-let g:mucomplete#no_mappings = 1
-
-
-
+Plug 'reasonml-editor/vim-reason-plus'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -135,7 +118,7 @@ let g:ale_linters = {
 \ 'dart': ['dartanalyzer', 'language_server'],
 \ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
-\ 'reason': [],
+\ 'reason': ['merlin', 'ols'],
 \ 'elixir': ['mix'],
 \ 'cpp': ['clangd', 'clang', 'clangcheck'],
 \ }
