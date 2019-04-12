@@ -121,12 +121,14 @@ let g:ale_linters = {
 \ 'reason': ['merlin', 'ols'],
 \ 'elixir': ['mix'],
 \ 'cpp': ['clangd', 'clang', 'clangcheck'],
+\ 'graphql': [],
 \ }
 
 let g:ale_fixers = {
 \ 'javascript': ['prettier', 'eslint'],
 \ 'dart': ['dartfmt'],
 \ 'hack': ['trim_whitespace', 'hackfmtdiff', 'remove_trailing_lines'],
+\ 'graphql': ['prettier', 'trim_whitespace', 'remove_trailing_lines'],
 \ 'ruby': ['rufo'],
 \ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
 \ 'elixir': ['mix_format'],
@@ -427,6 +429,7 @@ autocmd BufRead,BufNewFile *.sig set filetype=sml
 autocmd BufRead,BufNewFile sources.cm set filetype=sml
 autocmd BufRead,BufNewFile *.ispc set filetype=ispc
 autocmd BufRead,BufNewFile *todo.txt set filetype=todo.txt
+autocmd BufRead,BufNewFile *.graphql set filetype=graphql | let g:ale_javascript_prettier_options = '--parser graphql'
 
 "make haskell files override 'K' functionality
 autocmd FileType haskell nnoremap K :call Haddock()
