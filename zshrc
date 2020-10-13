@@ -11,11 +11,11 @@ PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Coreutils from homebrew
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-BREW_CORE_UTILS="/usr/local/opt/coreutils"
-LLVM_BIN="/usr/local/opt/llvm/bin"
-PATH="${LLVM_BIN}:$BREW_CORE_UTILS/libexec/gnubin:$PATH"
-PATH="$HOME/bin":$PATH
-PATH="${HOME}/.config/yarn/global/node_modules/.bin${PATH:+:${PATH}}"; export PATH;
+BREW_CORE_UTILS="/usr/local/opt/coreutils";
+LLVM_BIN="/usr/local/opt/llvm/bin";
+PATH="${LLVM_BIN}:$BREW_CORE_UTILS/libexec/gnubin:$PATH";
+PATH="${HOME}/.config/yarn/global/node_modules/.bin${PATH:+:${PATH}}";
+PATH="$HOME/bin":$PATH;
 
 
 # #basic stuff
@@ -63,6 +63,7 @@ alias ggp='git grep'
 
 #mercurial shit
 alias hd='hg diff'
+alias hgrball='hg rebase -s "(::bookmark() and draft()) - stable::" -d stable'
 
 # alias cd back to BSD so I can cd into directories with numbers
 alias cd='builtin cd'

@@ -72,17 +72,20 @@ Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/xmledit'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 "Reason
-Plug 'reasonml-editor/vim-reason-plus'
+Plug 'jordwalke/vim-reasonml'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <c-t> :FZF<cr>
+set rtp+=/usr/local/share/myc/vim 
+" Replace with a keybind you like
+nmap <c-f> :MYC<CR>
 
 
 call plug#end()
@@ -118,7 +121,7 @@ let g:ale_linters = {
 \ 'dart': ['dartanalyzer', 'language_server'],
 \ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
-\ 'reason': ['merlin', 'ols'],
+\ 'reason': ['reason-mode/reason/diagnostics'],
 \ 'elixir': ['mix'],
 \ 'cpp': ['clangd', 'clang', 'clangcheck'],
 \ 'graphql': [],
@@ -130,10 +133,30 @@ let g:ale_fixers = {
 \ 'hack': ['trim_whitespace', 'hackfmtdiff', 'remove_trailing_lines'],
 \ 'graphql': ['prettier', 'trim_whitespace', 'remove_trailing_lines'],
 \ 'ruby': ['rufo'],
-\ 'reason': ['refmt', 'remove_trailing_lines', 'trim_whitespace'],
+\ 'reason': ['refmt','remove_trailing_lines', 'trim_whitespace'],
 \ 'elixir': ['mix_format'],
 \ 'cpp': ['clang-format'],
 \ }
+
+" VSHEN
+let g:ale_javascript_prettier_options = '--single-quote --no-bracket-spacing --parser flow --trailing-comma all'
+let g:ale_virtualtext_cursor = 1
+let g:ale_completion_enabled = 1
+
+function! GetExecutable(buffer) abort
+  return ale#Var(a:buffer, 'eslint_exec')
+endfunction
+call ale#Set('eslint_exec', '/usr/local/fbpkg/nuclide/nuclide-node/production/node-v12.3.0-linux-x64/bin/node')
+call ale#linter#Define('javascript', {
+\   'name': 'eslint-lsp',
+\   'lsp': 'stdio',
+\   'executable': function('GetExecutable'),
+\   'command': '%e /usr/local/fbpkg/nuclide/vscode-nuclide-server/production/vscode-extensions/eslint/src/server/index.js',
+\   'language': 'javascript',
+\   'project_root': function('ale_linters#javascript#flow_ls#FindProjectRoot'),
+\})
+" VSHEN END
+
 let g:ale_c_parse_compile_commands=1
 "highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 "highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
@@ -150,13 +173,21 @@ let g:ale_lint_on_save = 1
 " %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
 " Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
+nnoremap <leader> N :ALENextWrap<cr>
+nnoremap <leader> P :ALEPreviousWrap<cr>
 " Press K to view the type in the gutter
 nnoremap <silent> K :ALEHover<CR>
 " Press gd to go to the definition
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
+
+nnoremap <C-c> :ALEFix arc<CR>
+
+augroup ALEProgress
+    autocmd!
+    autocmd User ALELintPre  hi Statusline ctermfg=darkgrey
+    autocmd User ALELintPost hi Statusline ctermfg=NONE
+augroup END
 
 let g:ale_completion_enabled = 1
 let g:ale_c_parse_makefile = 1
@@ -326,7 +357,7 @@ au FocusLost * :wa
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Ack
-nnoremap <leader>a :Ack
+"nnoremap <leader>a :Ack
 
 " reselect things just pasted
 nnoremap <leader>v V`]
