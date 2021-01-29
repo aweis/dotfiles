@@ -73,7 +73,7 @@ Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/xmledit'
 
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 "Reason
 Plug 'jordwalke/vim-reasonml'
@@ -121,7 +121,7 @@ let g:ale_linters = {
 \ 'dart': ['dartanalyzer', 'language_server'],
 \ 'hack': ['hack', 'aurora'],
 \ 'ruby': ['ruby'],
-\ 'reason': ['reason-mode/reason/diagnostics'],
+\ 'reason': ['merlin'],
 \ 'elixir': ['mix'],
 \ 'cpp': ['clangd', 'clang', 'clangcheck'],
 \ 'graphql': [],

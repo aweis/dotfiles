@@ -70,14 +70,18 @@ alias cd='builtin cd'
 
 # alias specific directories
 alias cds='cd $HOME/Dropbox/Apps/acm-schedule'
-alias cdd='cd $HOME/www/html/intern/js/network/network_ui/dashboard'
+alias cdd='cd $HOME/www/html/intern/js/network/network_ui/debug'
 alias cdf='cd $HOME/Dropbox/Apps/slack'
 alias cdw='cd $HOME/www'
 alias cdt='cd $HOME/Dropbox/Apps/thedormlounge'
 alias cdn='cd $HOME/www/html/intern/js/network/network_ui'
 alias cdp='cd $HOME/www/flib/intern/site/x/network/network_ui'
 alias cdc='cd $HOME/www/html/intern/css/network/'
+alias cdr='cd $HOME/www/html/intern/js/network/network_ui/re'
 alias cdh='cd $HOME/www/html/intern/js/network/network_ui/re/hecate'
+alias cda='cd $HOME/www/html/intern/js/network/network_ui/atlantis'
+alias cds='cd $HOME/www/html/intern/js/network/network_ui/service_graph'
+alias cdq='cd $HOME/www/html/intern/js/network/network_ui/re/quic'
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
