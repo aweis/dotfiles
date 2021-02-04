@@ -146,15 +146,15 @@ let g:ale_completion_enabled = 1
 function! GetExecutable(buffer) abort
   return ale#Var(a:buffer, 'eslint_exec')
 endfunction
-call ale#Set('eslint_exec', '/usr/local/fbpkg/nuclide/nuclide-node/production/node-v12.3.0-linux-x64/bin/node')
-call ale#linter#Define('javascript', {
-\   'name': 'eslint-lsp',
-\   'lsp': 'stdio',
-\   'executable': function('GetExecutable'),
-\   'command': '%e /usr/local/fbpkg/nuclide/vscode-nuclide-server/production/vscode-extensions/eslint/src/server/index.js',
-\   'language': 'javascript',
-\   'project_root': function('ale_linters#javascript#flow_ls#FindProjectRoot'),
-\})
+" call ale#Set('eslint_exec', '/usr/local/fbpkg/nuclide/nuclide-node/production/node-v12.3.0-linux-x64/bin/node')
+"call ale#linter#Define('javascript', {
+"\   'name': 'eslint-lsp',
+"\   'lsp': 'stdio',
+"\   'executable': function('GetExecutable'),
+"\   'command': '%e /usr/local/fbpkg/nuclide/vscode-nuclide-server/production/vscode-extensions/eslint/src/server/index.js',
+"\   'language': 'javascript',
+"\   'project_root': function('ale_linters#javascript#flow_ls#FindProjectRoot'),
+"\})
 " VSHEN END
 
 let g:ale_c_parse_compile_commands=1
