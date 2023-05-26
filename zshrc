@@ -1,5 +1,4 @@
 DOTFILES_DIR=$HOME/Dropbox/dotfiles
-[[ `hostname` =~ 'facebook.com' ]] && FB="true"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -61,40 +60,22 @@ alias grb-first='git_squash_second_with_initial'
 # git-grep
 alias ggp='git grep'
 
-#mercurial shit
-alias hd='hg diff'
-alias hgrball='hg rebase -s "(::bookmark() and draft()) - stable::" -d stable'
-
 # alias cd back to BSD so I can cd into directories with numbers
 alias cd='builtin cd'
 
 # alias specific directories
 alias cds='cd $HOME/Dropbox/Apps/acm-schedule'
-alias cdd='cd $HOME/www/html/intern/js/network/network_ui/debug'
 alias cdf='cd $HOME/Dropbox/Apps/slack'
-alias cdw='cd $HOME/www'
 alias cdt='cd $HOME/Dropbox/Apps/thedormlounge'
-alias cdn='cd $HOME/www/html/intern/js/network/network_ui'
-alias cdp='cd $HOME/www/flib/intern/site/x/network/network_ui'
-alias cdc='cd $HOME/www/html/intern/css/network/'
-alias cdr='cd $HOME/www/html/intern/js/network/network_ui/re'
-alias cdh='cd $HOME/www/html/intern/js/network/network_ui/re/hecate'
-alias cda='cd $HOME/www/html/intern/js/network/network_ui/atlantis'
-alias cds='cd $HOME/www/html/intern/js/network/network_ui/service_graph'
-alias cdq='cd $HOME/www/html/intern/js/network/network_ui/re/quic'
 
 # alias for starting and stopping postgreSQL server
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstart='pgs'
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias r="rails"
-if [[ -z $FB ]]; then
-  alias tmux="TERM=screen-256color-bce tmux"
-fi
 alias tma='tmux attach -d -t'
 alias sshj='ssh aweis@10.3.0.164'
 alias sshvm='ssh aweis@10.3.12.208'
-alias re="~/www/scripts/re/build-www"
 alias tbgs="tbgs --color on"
 
 #exports
@@ -153,49 +134,13 @@ cd `cat /tmp/.cwd`
 #https://github.com/robbyrussell/oh-my-zsh/issues/5327#issuecomment-248836398
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 
-if [[ -n $FB ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-fi
-
 export ANDROID_HOME=~/Library/Android/sdk
 
-# facebook stuff to show a different statusline if in an hg repo on the dev server
-
-function parse_hg_branch {
-  if [[ -n $(_dotfiles_scm_info) ]]; then
-    # wrap in parens
-    echo "$(_dotfiles_scm_info)" | tr -d ' '
-  fi
-}
-
 autoload -U colors && colors
-function hgproml {
-  local user="%n"
-  local at="@"
-  local host="%m"
-
-  PS1="$user$at$host%{$fg[magenta]%}\$(parse_hg_branch)%{$reset_color%}> "
-  PROMPT=''"$PS1"''
-}
-
-if [ -f /usr/facebook/ops/rc/master.zshrc ]; then
-  source /usr/facebook/ops/rc/master.zshrc
-fi
-
-if [[ -n $FB ]]; then
-  if [ -f /usr/share/scm/scm-prompt.sh ]; then
-    source /usr/share/scm/scm-prompt.sh
-  fi
-fi
 
 set_prompt () {
-  if [[ -n $FB && ( "$PWD" =~ "/home/aweis/www" || "$PWD" =~ "/home/aweis/www-hg" ||"$PWD" =~ "/home/aweis/dataswarm" || "$PWD" =~ "/home/aweis/fbsource" ) ]]; then
-    hgproml
-  else
-    # update prompt
-    PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
-  fi
+  # update prompt
+  PROMPT='%B%(?..[%?] )%b%n@%U%m%u$(git_super_status)> '
 }
 
 precmd_functions+=set_prompt
