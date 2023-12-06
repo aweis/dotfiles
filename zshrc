@@ -4,18 +4,19 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$PATH:"/usr/local/mysql/bin"
-PATH=$PATH:"$HOME/development/flutter/bin"
 PATH="$PATH":"$HOME/.pub-cache/bin"
 
+export PATH="/usr/local/opt/openssl@3.1/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@3.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@3.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@3.1/lib/pkgconfig"
 
 # Coreutils from homebrew
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 BREW_CORE_UTILS="/usr/local/opt/coreutils";
 LLVM_BIN="/usr/local/opt/llvm/bin";
 PATH="${LLVM_BIN}:$BREW_CORE_UTILS/libexec/gnubin:$PATH";
-PATH="${HOME}/.config/yarn/global/node_modules/.bin${PATH:+:${PATH}}";
 PATH="$HOME/bin":$PATH;
-
 
 # #basic stuff
 autoload -U compinit promptinit add-zsh-hook

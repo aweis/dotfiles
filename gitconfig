@@ -1,6 +1,6 @@
 [user]
 	name = Adam Weis
-	email = aweis@andrew.cmu.edu
+	email = aweis210@gmail.com
 [core]
 	excludesfile = /Users/adam/.gitignore_global
 
@@ -43,3 +43,5 @@
   ign = ls-files -o -i --exclude-standard
 [push]
 	default = matching
+[url "https://github.com/"]
+	insteadOf = git://github.com/
