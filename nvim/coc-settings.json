@@ -1,0 +1,60 @@
+{
+  "codeLens.enable": true,
+  "coc.preferences.formatOnSave": true,
+  "languageserver": {
+    "flow": {
+      "command": "flow",
+      "args": [
+        "lsp"
+      ],
+      "filetypes": [
+        "javascript",
+        "javascriptreact"
+      ],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [
+        ".flowconfig"
+      ]
+    },
+    "rescript": {
+      "enable": true,
+      "module": "~/.config/nvim/plugged/vim-rescript/server/out/server.js",
+      "args": [
+        "--node-ipc"
+      ],
+      "filetypes": [
+        "rescript"
+      ],
+      "rootPatterns": [
+        "bsconfig.json"
+      ]
+    },
+    "reason": {
+      "formatterPriority": 10,
+      "command": "esy",
+      "args": [
+        "sh",
+        "-c",
+        "ocamllsp"
+      ],
+      "filetypes": [
+        "reason"
+      ]
+    },
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": [
+        "config",
+        "exec",
+        "--",
+        "ocaml-language-server",
+        "--stdio"
+      ],
+      "filetypes": [
+        "ocaml",
+      ]
+    },
+  }
+}
